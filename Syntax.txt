@@ -1,0 +1,68 @@
+Syntax.in
+
+program = {FUNC} MAIN
+
+FUNC = FUNC_TYPE "{" STMT_LIST "return" ";" "}"
+
+FUNC_DECL = (TYPE IDENTIFIER "(" PARAM ")") | (TYPE IDENTIFIER "(" ")")
+
+PARAM = TYPE IDENTIFIER "," PARAM | TYPE IDENTIFIER
+
+TYPE = "int" | "char" | "bool"
+
+STMT_LIST = STMT|STMT ";" STMT_LIST
+
+STMT = SIMPLSTMT | STRUCTSTMT
+
+SIMPLSTMT = ASSIGNSTMT | IOSTMT
+
+ASSIGNSTMT = IDENTIFIER "=" FACTOR | char | bool ";"
+
+EXPRESSION = EXPRESSION ("+"|"-"|"*"|"/"|"%") TERM | TERM
+
+TERM = (TERM ("+"|"-"|"*"|"/"|"%") FACTOR) | FACTOR
+
+FACTOR = "(" EXPRESSION ")" | IDENTIFIER | int | (IDENTIFIER "[ "IDENTIFIER | nr "]")
+
+IOSTMT = "READ" | "WRITE" "(" IDENTIFIER ")"
+
+STRUCTSTMT = IFSTMT | WHILESTMT | FORSTMT
+
+IFSTMT = "if" "(" CONDITION ")" "{" (STMT ";")|{STMT ";"} "}" ["else" "{" (STMT ";")|{STMT ";"} "}"]
+
+WHILESTMT = "while" "(" CONDITION ")" "{" (STMT ";")|{STMT ";"} "}"
+
+FORSTMT = "for" "(" IDENTIFIER "=" TERM ";" CONDITION ";"  IDENTIFIER "=" EXPRESSION ")" "{" (STMT ";")|{STMT ";"} "}"
+
+CONDITION = EXPRESSION RELATION EXPRESSION
+
+RELATION = "<" | "<=" | "==" | ">=" | ">" | "!=" 
+
+LOGIC_OP = "!" | "&&" | "||"
+
+ARRAYDECL = TYPE IDENTIFIER "[" nr "]" ";"
+
+IDENTIFIER =  letter{letter|digit|"_"}
+
+letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" ;
+
+digit = "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9";
+
+int = "0" | [ "-" ] nr
+
+nr = digit_excluding_zero { digit }
+
+digit_excluding_zero = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+	      
+digit = "0" | digit excluding zero 
+
+char = letter | digit | symbol | "_"
+
+symbol = "[" | "]" | "{" | "}" | "(" | ")" | "<" | ">" | "'" | '"' | "=" | "|" | "." | "," | ";" | "&" | "*" | "^" | "~" | "!" | "?" | "\" | "/" | "-" | " " | "/n"

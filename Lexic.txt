@@ -1,0 +1,39 @@
+Alphabet:
+	a) Letters of the English alphabet upper and lower case: A-Z and a-z;
+	b) Underline character: '_';
+	c) Decimal digits: 0-9;
+
+Lexic:
+	a) Special symbols:
+  - operators: 
+	mathematical: + - * / %
+	logical: ! & ||
+	relational: > < >= <= =
+  - separators: [ ] { } ( ) : ; , space " " ' '
+
+  - reserved words: if else repeat loop result read true false int char
+bool const var write
+
+	b) Identifiers: A sequence of letters and digits, such that the first
+character is a letter.
+Rule: identifier = letter{letter|digit|"_"};
+      letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" ;
+      digit = "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9";
+
+	c) Constants.
+Integer rule: int = "0" | [ "-" ] natural number
+	      natural number = digit excluding zero { digit }
+	      digit excluding zero = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+	      digit = "0" | digit excluding zero 
+
+Character rule: char = letter | digit | symbol | "_"
+		symbol = "[" | "]" | "{" | "}" | "(" | ")" | "<" | ">" | "'" | '"' | "=" | "|" | "." | "," | ";"
+
+Boolean rule: bool = "true"|"false"
