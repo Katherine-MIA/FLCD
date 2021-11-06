@@ -1,0 +1,36 @@
+# include < iostream >
+
+int determinaMinim ( int elemA , int elemB )
+{
+	if ( elemA < elemB )
+	{
+		return elemA ;
+	}
+	return elemB ;
+}
+
+int determinaMaxim ( int elemA , int elemB )
+{
+	if ( elemA > elemB )
+	{
+		return elemA ;
+	}
+	return elemB ;
+}
+
+int main ( )
+{
+	int elemA , elemB , elemC , minim , maxim ;
+	std:: cin >> elemA >> elemB >> elemC ;
+
+	minim = determinaMinim ( elemA , elemB ) ;
+	minim = determinaMinim ( minim , elemC ) ;
+
+	maxim = determinaMaxim ( elemA , elemB ) ;
+	maxim = determinaMaxim ( maxim , elemC ) ;
+
+	std:: cout << minim ;
+	std:: cout << maxim ;
+
+	return 0 ;
+}

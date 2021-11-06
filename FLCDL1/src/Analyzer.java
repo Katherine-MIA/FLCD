@@ -238,7 +238,7 @@ public class Analyzer {
 
             if (nrUsedChars != lineCharArray.length)
             {
-                throw new Exception("Eroare lexicala la linia " + indexLine + " " + nrUsedChars + " " + lineCharArray.length + "     linia contine: " + line + "\n" );
+                throw new Exception("Lexical error at line: " + indexLine + " " + nrUsedChars + " " + lineCharArray.length + "     line contains: " + line + "\n" );
             }
             indexLine += 1;
         }
@@ -304,7 +304,7 @@ public class Analyzer {
                 }
                 if (nrAtomsUsed != atoms.length)
                 {
-                    throw new Exception("Eroare lexicala la linia " + indexLine + "     linia contine: " + line + "\n");
+                    throw new Exception("Lexical error at line: " + indexLine + "     line contains: " + line + "\n");
                 }
             }
             indexLine += 1;

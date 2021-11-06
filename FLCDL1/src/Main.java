@@ -1,18 +1,15 @@
-import java.io.IOException;
-
-
-//Documentaation -> hashTable
+//Documentation -> hashTable
 //Documentation -> Analyzer
 //Homework 1 a)
 
 public class Main {
     public static void main(String[] args) {
-        String inputFileName  = "date/input.txt";
-        String atomsFileName  = "date/atoms.txt";
-        String outputFileName = "date/output.txt";
-        String tokensFileName = "date/tokens.txt";
-        String tsFileName     = "date/ts.txt";
-        String fipFileName    = "date/pif.txt";
+        String inputFileName  = "src/data/input.txt";
+        String atomsFileName  = "src/data/atoms.txt";
+        String outputFileName = "src/data/output.txt";
+        String tokensFileName = "src/data/tokens.txt";
+        String tsFileName     = "src/data/ts.txt";
+        String fipFileName    = "src/data/pif.txt";
 
         Analyzer analyzer = new Analyzer(inputFileName, atomsFileName, outputFileName, tokensFileName, tsFileName, fipFileName);
 

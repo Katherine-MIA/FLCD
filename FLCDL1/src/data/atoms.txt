@@ -1,0 +1,1 @@
+# , include iostream int determinaMinim determinaMaxim << >> <= ( elemA elemB ) { if < > return ; } main elemC minim maxim std:: cin cout rest % rezultat cmmdc suma nrElemente element indice = + while 0 1

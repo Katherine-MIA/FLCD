@@ -1,0 +1,12 @@
+Cod               Simbol
+elemB             0
+determinaMaxim    1
+elemC             2
+main              38
+elemA             44
+minim             48
+maxim             49
+determinaMinim    132
+
+Cod               Simbol
+0                 4
