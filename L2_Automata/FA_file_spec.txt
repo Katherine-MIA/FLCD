@@ -1,0 +1,7 @@
+file ::= alphabet list_final_states transitions_list initial_states
+final_states_list ::= state " " {state " "}
+alphabet::= SYMBOL" " {SYMBOL " "}
+transitions_list ::= transition " " {transition " "}
+transition ::= state " " state " " SYMBOL
+state ::= "q"SYMBOL
+initial_state ::= state
