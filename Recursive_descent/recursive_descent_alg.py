@@ -18,11 +18,13 @@ def recursive_descent(grammar, sequence):
     while config.state != State.FINAL and config.state != State.ERROR:
         if config.state == State.NORMAL:
             if len(config.input_stack) == 0 and config.index == len(sequence):
+                #success
                 config.state = State.FINAL
             elif len(config.input_stack) == 0:
                 config.state = State.BACK
             else:
                 if config.input_stack[0] in grammar.get_non_terminals():
+                    #expandz
                     non_term = config.input_stack[0]
                     first_prod = grammar.get_productions_of(non_term)[0]
                     config.work_stack.append((first_prod.get_left_term(), first_prod.get_right_term()))
